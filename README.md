@@ -23,7 +23,7 @@ Giải bài toán Sudoku bằng cách mô hình hoá dưới dạng **Constraint
 ## Cấu trúc thư mục
 
 ```
-sudoku-csp-solver/
+72ITAI30103_Team2_Sudoku/
 ├── src/                # Toàn bộ source code
 │   ├── core.py         # Biểu diễn CSP: Variable, Domain, Constraint
 │   ├── backtracking.py # Backtracking Search (baseline) — Lâm
@@ -32,6 +32,7 @@ sudoku-csp-solver/
 │   ├── local_search.py # Min-Conflicts — Quang
 │   ├── benchmark.py    # Đo & so sánh hiệu năng — Quang
 │   └── main.py         # Entry point chạy solver
+├── tests/               # Unit test cho từng module (vd: test_heuristics.py)
 ├── data/                # Bộ đề Sudoku test (độ khó khác nhau)
 ├── results/             # Số liệu benchmark, biểu đồ so sánh
 ├── docs/                # Slide, essay, tài liệu tham khảo
@@ -45,8 +46,8 @@ Yêu cầu Python 3.10+.
 
 ```bash
 # Clone repo
-git clone <repo-url>
-cd sudoku-csp-solver
+git clone https://github.com/noway165/72ITAI30103_Team2_Sudoku.git
+cd 72ITAI30103_Team2_Sudoku
 
 # Tạo virtual environment
 python -m venv venv
@@ -65,6 +66,12 @@ python src/main.py --input data/hard_01.txt --method min_conflicts
 ```
 
 Các giá trị `--method` hỗ trợ: `backtracking`, `mrv_lcv`, `forward_checking`, `ac3`, `min_conflicts` *(cập nhật khi từng module hoàn thiện)*.
+
+Chạy toàn bộ test:
+
+```bash
+python -m unittest discover tests
+```
 
 ## Định dạng dữ liệu đầu vào
 
@@ -99,7 +106,6 @@ File `.txt` trong `data/`, 9 dòng, mỗi dòng 9 ký tự số (0 = ô trống)
 | Thuyết trình Oral | 19/11/2026 |
 | Hạn nộp ETC | 22/11/2026 |
 
-Chi tiết lịch trình từng tuần: xem `docs/lich_trinh.docx`.
 
 ## Deliverables
 
