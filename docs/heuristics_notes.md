@@ -16,18 +16,16 @@ Backtracking thuần chọn ô theo thứ tự cố định (hàng → cột) v�
 - **Ô cho sẵn** nằm trong `assignment` ngay từ đầu nên MRV/Degree không bao giờ chọn lại chúng.
 - **Degree** trong Sudoku: ban đầu mọi ô đều có 20 hàng xóm, nên Degree chỉ có tác dụng khi đếm hàng xóm *chưa gán*, và chủ yếu dùng để phá hoà cho MRV.
 
-## Interface đang giả định với core.py
+## Interface với core.py
 
-`heuristics.py` hiện chỉ cần một object `csp` có 3 thuộc tính, và `assignment` là dict:
+`heuristics.py` dùng các phần sau của `core.CSP` (Lâm):
 
 ```python
-csp.variables   # list[(row, col)]            — 81 biến
-csp.domains     # dict[(row, col)] -> iterable — domain hiện tại
-csp.neighbors   # dict[(row, col)] -> iterable — 20 ô hàng xóm
-assignment      # dict[(row, col)] -> int
+csp.domains[cell]                    # set các giá trị còn khả dĩ
+csp.neighbors(cell)                  # 20 ô hàng xóm (là hàm, không phải dict)
+csp.unassigned_variables(assignment) # các ô chưa gán
+csp.initial_assignment()             # ô cho sẵn → assignment ban đầu
 ```
-
-**Cần xác nhận với Lâm** khi `core.py` lên repo; nếu tên thuộc tính khác thì chỉ cần sửa trong `legal_values` và `mrv`.
 
 ## Pseudocode
 
