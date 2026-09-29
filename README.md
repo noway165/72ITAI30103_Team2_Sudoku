@@ -102,7 +102,7 @@ File `.txt` trong `data/`, 9 dòng, mỗi dòng 9 ký tự số (0 = ô trống)
 |---|---|
 | Thuyết trình Proposal | 02/10/2026 |
 | Thuyết trình Logical Agents (môn học) | 22/10/2026 |
-| Buổi học cuối — Final ready | 12/11/2026 |
+| Buổi học cuối - Final ready | 12/11/2026 |
 | Thuyết trình Oral | 19/11/2026 |
 | Hạn nộp ETC | 22/11/2026 |
 
