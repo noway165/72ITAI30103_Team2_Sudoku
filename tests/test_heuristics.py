@@ -5,6 +5,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
+from backtracking import BacktrackingSolver  # noqa: E402
 from core import CSP, read_sudoku  # noqa: E402
 from heuristics import legal_values, mrv  # noqa: E402
 
@@ -19,18 +20,6 @@ DESIGN_EXAMPLE = [
     "000419005",
     "000080079",
 ]
-
-
-def solve_with_mrv(csp, assignment):
-    if csp.is_complete(assignment):
-        return assignment
-    var = mrv(csp, assignment)
-    for value in legal_values(csp, var, assignment):
-        assignment[var] = value
-        if solve_with_mrv(csp, assignment):
-            return assignment
-        del assignment[var]
-    return None
 
 
 class LegalValuesTest(unittest.TestCase):
@@ -57,7 +46,9 @@ class MRVTest(unittest.TestCase):
             with self.subTest(puzzle=path.name):
                 csp = CSP(read_sudoku(str(path)))
                 clues = csp.initial_assignment()
-                solution = solve_with_mrv(csp, dict(clues))
+                solution = BacktrackingSolver(
+                    csp, select_var=mrv, order_values=legal_values
+                ).solve()
                 self.assertIsNotNone(solution)
                 self.assertTrue(clues.items() <= solution.items())
                 for var, value in solution.items():
