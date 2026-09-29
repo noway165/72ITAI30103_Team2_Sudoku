@@ -1,6 +1,6 @@
 # Sudoku CSP Solver
 
-Final Project — Nhập môn Trí tuệ Nhân tạo (261_72ITSE30303_01)
+Final Project - Nhập môn Trí tuệ Nhân tạo (261_72ITSE30303_01)
 Giảng viên: Dr. Huy T. Nguyen
 
 Giải bài toán Sudoku bằng cách mô hình hoá dưới dạng **Constraint Satisfaction Problem (CSP)**, so sánh hiệu quả của nhiều chiến lược giải: Backtracking thuần, Heuristics (MRV/Degree/LCV), Pruning (Forward Checking/AC-3), và Local Search (Min-Conflicts).
