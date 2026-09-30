@@ -1,0 +1,13 @@
+difficulty,config,puzzles,avg_nodes,avg_backtracks,avg_time_s,success_rate
+easy,Backtracking,4,140.5,99.5,0.00137,1.0
+easy,MRV,4,41,0,0.003001,1.0
+easy,MRV+FC,4,33.5,0,0.002349,1.0
+easy,MRV+AC3,4,0,0,0.005593,1.0
+medium,Backtracking,4,1370.2,1321.2,0.012573,1.0
+medium,MRV,4,59,10,0.004645,1.0
+medium,MRV+FC,4,50,4.8,0.00383,1.0
+medium,MRV+AC3,4,19.2,0.8,0.007508,1.0
+hard,Backtracking,5,27738.8,27682.8,0.245581,1.0
+hard,MRV,5,2128,2072,0.206078,1.0
+hard,MRV+FC,5,3099.8,3044.6,0.26469,1.0
+hard,MRV+AC3,5,926.8,876.4,0.167262,1.0
